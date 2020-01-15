@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: grafana-pv
+  namespace: grafana
+  labels:
+    type: local
+spec:
+  storageClassName: grafana
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+     path: "/data/prometheus/grafana"
